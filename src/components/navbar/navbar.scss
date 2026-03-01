@@ -1,0 +1,153 @@
+@use "../../style/_variables" as var;
+@use "../../style/mixin" as mix;
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  @include mix.flex-center-center;
+  background-color: var.$light-blue;
+  border-bottom: 1px solid var.$border;
+  padding: 0px 10px 0px 60px;
+  position: relative;
+
+  .logo {
+    @include mix.flex-center-center;
+    position: absolute;
+    left: 10px;
+    color: var.$black;
+
+    img {
+      width: 40px;
+      margin-right: 5px;
+    }
+
+    h2 {
+      @media (max-width: 830px) {
+        display: none;
+      }
+    }
+  }
+
+  .input {
+    @include mix.flex-center-center;
+    background-color: white;
+    max-width: 500px;
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid var.$border;
+    position: relative;
+
+    form {
+      @include mix.flex-center-center;
+      width: 100%;
+
+      button {
+        @include mix.flex-center-center;
+        font-size: 25px;
+        padding: 5px;
+        margin-right: 3px;
+        width: 50px;
+        height: 34px;
+        border-radius: 20px;
+        transition: 0.3s;
+        background-color: transparent;
+        border: none;
+
+        cursor: pointer;
+        &:active,
+        &:hover {
+          background-color: var.$royal-blue;
+        }
+      }
+    }
+
+    &:has(input:focus, .search_history:hover) .search_history {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid var.$border;
+    }
+
+    input {
+      flex: 1;
+      margin-left: 15px;
+      font-size: 15px;
+      border: none;
+      outline: none;
+    }
+
+    .search_history {
+      background-color: white;
+      max-height: 400px;
+      width: 0%;
+      position: absolute;
+      top: 115%;
+      border-radius: 20px;
+      transition: 0.3s;
+      overflow-x: hidden;
+      border: none;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        @include mix.flex-center-between;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+        padding: 10px 5px 0px 0px;
+
+        .clear {
+          text-decoration: underline;
+          color: #0000ff;
+          cursor: pointer;
+        }
+      }
+
+      .records {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: var.$border;
+          border-radius: 10px;
+        }
+
+        div {
+          @include mix.flex-center-between;
+          border-top: 0.5px solid var.$border;
+          border-bottom: 0.5px solid var.$border;
+          padding: 8px 0px;
+          font-size: 14px;
+          color: var.$light-black;
+
+          span.record-text {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          > svg {
+            font-size: 20px;
+            margin-right: 8px;
+            cursor: pointer;
+
+            &:hover {
+              color: var.$black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
