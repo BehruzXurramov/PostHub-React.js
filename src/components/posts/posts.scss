@@ -1,0 +1,83 @@
+@use "../../style/variables" as var;
+@use "../../style/mixin" as mix;
+
+.posts {
+  background-color: var.$light-blue;
+  width: calc(50% - 80px);
+  height: calc(100vh - 100px);
+  border-radius: 25px;
+  padding: 20px 30px;
+  margin: 20px 0px;
+
+  .posts_scroll {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .post_card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 15px 15px;
+      border: 1px solid var.$border;
+
+      .user {
+        border-bottom: 0.5px solid var.$border;
+        padding-bottom: 5px;
+
+        .name {
+          font-size: 16px;
+          line-height: 40%;
+        }
+
+        .username {
+          font-size: 13px;
+          color: var.$light-black;
+        }
+      }
+
+      .post_content {
+        border-bottom: 0.5px solid var.$border;
+        padding: 5px 0px;
+      }
+
+      .post_info {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 5px;
+
+        .like,
+        .viewed {
+          display: flex;
+          align-items: center;
+        }
+
+        .like {
+          svg {
+            font-size: 24px;
+          }
+        }
+
+        svg {
+          font-size: 20px;
+        }
+
+        span {
+          font-size: 14px;
+          color: var.$light-black;
+          margin-left: 2px;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

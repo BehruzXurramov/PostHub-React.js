@@ -57,9 +57,13 @@
         cursor: pointer;
         &:active,
         &:hover {
-          background-color: var.$royal-blue;
+          background-color: var.$dark-blue !important;
         }
       }
+    }
+
+    &:has(input:focus) button{
+      background-color: var.$royal-blue;
     }
 
     &:has(input:focus, .search_history:hover) .search_history {

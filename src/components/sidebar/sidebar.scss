@@ -2,9 +2,84 @@
 @use "../../style/mixin" as mix;
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var.$light-blue;
   width: 25%;
   height: calc(100vh - 100px);
   margin: 20px;
   border-radius: 20px;
+  padding: 20px 30px;
+
+  .top,
+  .bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span,
+  a,
+  h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .description {
+    text-align: justify;
+    color: #434751;
+    border-bottom: 0.5px solid var.$border;
+    margin: 10px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .id {
+    color: var.$light-black;
+    font-size: 14px;
+  }
+
+  .name {
+    margin: 5px 0px;
+    font-size: 24px;
+  }
+
+  .info {
+    font-size: 15px;
+    color: var.$light-black;
+    margin-bottom: 5px;
+    border-bottom: 0.5px solid var.$border;
+  }
+
+  .follow {
+    display: flex;
+    justify-content: space-between;
+    max-width: 70%;
+    border-bottom: 0.5px solid var.$border;
+  }
+
+  .time {
+    color: var.$light-black;
+    font-size: 14px;
+  }
+
+  .btn_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .write_btn {
+      background-color: white;
+      height: 50px;
+      width: 200px;
+      min-width: min-content;
+      border-radius: 25px;
+      padding: 0px 16px;
+      white-space: nowrap;
+      border: 1px solid var.$border;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
 }
