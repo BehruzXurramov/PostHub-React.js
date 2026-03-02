@@ -1,0 +1,11 @@
+@use "../../style/variables" as var;
+@use "../../style/mixin" as mix;
+
+.viewed_posts {
+  background-color: var.$light-blue;
+  width: 25%;
+  height: calc(100vh - 100px);
+  border-radius: 25px;
+  padding: 20px 30px;
+  margin: 20px;
+}

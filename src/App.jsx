@@ -1,14 +1,17 @@
-import { Navbar, Sidebar } from "./components";
+import { Navbar, Posts, Sidebar, ViewedPosts } from "./components";
 import "./style/global.scss";
 
 function App() {
   return (
     <div className="app">
       <Navbar />
-      <Sidebar />
+      <main className="main">
+        <Sidebar />
+        <Posts />
+        <ViewedPosts />
+      </main>
     </div>
   );
 }
 
 export default App;
-
